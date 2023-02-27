@@ -1,0 +1,13 @@
+service: nuxt-app-lambda
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: ap-southeast-1
+
+functions:
+  nuxt:
+    handler: .output/server/index.handler
+    events:
+      - httpApi: '*'
